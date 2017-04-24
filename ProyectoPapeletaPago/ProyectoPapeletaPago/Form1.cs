@@ -16,5 +16,17 @@ namespace ProyectoPapeletaPago
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormCodigo Codigo = new FormCodigo();
+            Codigo.ShowDialog();
+        }
+
+        private void buttonRegistrar_Click(object sender, EventArgs e)
+        {
+            FormCodigo Codigo = new FormCodigo();
+            Codigo.ShowDialog();
+        }
     }
 }
