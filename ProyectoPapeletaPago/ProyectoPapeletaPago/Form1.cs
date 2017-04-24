@@ -19,14 +19,26 @@ namespace ProyectoPapeletaPago
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormCodigo Codigo = new FormCodigo();
-            Codigo.ShowDialog();
+            //FormCodigo Codigo = new FormCodigo();
+           // Codigo.ShowDialog();
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            FormCodigo Codigo = new FormCodigo();
-            Codigo.ShowDialog();
+            FormRegistroNuevoUsuario NuevoUsuario = new FormRegistroNuevoUsuario();
+            NuevoUsuario.ShowDialog();
+        }
+
+        private void buttonOlvideContraseña_Click(object sender, EventArgs e)
+        {
+            FormOlvideContraseña OlvideContraseña = new FormOlvideContraseña();
+            OlvideContraseña.ShowDialog();
+        }
+
+        private void buttonSesion_Click(object sender, EventArgs e)
+        {
+            FormAdministrador Admi = new FormAdministrador();
+            Admi.ShowDialog();
         }
     }
 }

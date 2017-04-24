@@ -81,6 +81,7 @@
             this.buttonSesion.TabIndex = 4;
             this.buttonSesion.Text = "INICIAR SESION";
             this.buttonSesion.UseVisualStyleBackColor = true;
+            this.buttonSesion.Click += new System.EventHandler(this.buttonSesion_Click);
             // 
             // buttonOlvideContraseña
             // 
@@ -90,6 +91,7 @@
             this.buttonOlvideContraseña.TabIndex = 5;
             this.buttonOlvideContraseña.Text = "OLVIDE MI CONTRASEÑA";
             this.buttonOlvideContraseña.UseVisualStyleBackColor = true;
+            this.buttonOlvideContraseña.Click += new System.EventHandler(this.buttonOlvideContraseña_Click);
             // 
             // buttonRegistrar
             // 

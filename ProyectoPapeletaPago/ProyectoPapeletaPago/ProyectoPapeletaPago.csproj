@@ -52,11 +52,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCodigo.cs">
+    <Compile Include="FormAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCodigo.Designer.cs">
-      <DependentUpon>FormCodigo.cs</DependentUpon>
+    <Compile Include="FormAdministrador.Designer.cs">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambiarContraseña.Designer.cs">
+      <DependentUpon>FormCambiarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOlvideContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOlvideContraseña.Designer.cs">
+      <DependentUpon>FormOlvideContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistroNuevoEmpleado.cs">
       <SubType>Form</SubType>
@@ -64,16 +76,31 @@
     <Compile Include="FormRegistroNuevoEmpleado.Designer.cs">
       <DependentUpon>FormRegistroNuevoEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistroNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistroNuevoUsuario.Designer.cs">
+      <DependentUpon>FormRegistroNuevoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCodigo.resx">
-      <DependentUpon>FormCodigo.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdministrador.resx">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCambiarContraseña.resx">
+      <DependentUpon>FormCambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOlvideContraseña.resx">
+      <DependentUpon>FormOlvideContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroNuevoEmpleado.resx">
       <DependentUpon>FormRegistroNuevoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroNuevoUsuario.resx">
+      <DependentUpon>FormRegistroNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
