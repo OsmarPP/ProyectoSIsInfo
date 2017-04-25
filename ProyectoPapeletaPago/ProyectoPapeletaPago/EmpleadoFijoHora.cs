@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProyectoPapeletaPago
 {
-    class Conexion
+    class EmpleadoFijoHora
     {
         SqlConnection cm;
         SqlCommand cmd;
@@ -18,31 +18,35 @@ namespace ProyectoPapeletaPago
         SqlDataAdapter da;
         DataTable dt;
 
-        /*public Conexion()
+        public EmpleadoFijoHora()
         {
-        }*/
-
-        public bool AbrirConexion()
-        {
-            bool res = true;
             try
             {
-                
+
                 cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MatiasPF\Source\Repos\ProyectoSIsInfo\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
                 cm.Open();
             }
             catch (Exception ex)
             {
-                res = false;
                 MessageBox.Show("Fallo en la conexion" + ex.ToString());
             }
+        }
+
+        public bool VerificarSiEsEmpleadoFIjo(int vcodigo)
+        {
+            bool res = false;
 
             return res;
         }
 
-        public void CerraConexion()
+        public void InsertarNuevoEmpleado(int vci,string vnom,string vapelli,string vfono,string vdir,string vrol,string vcargo,int vnumerobancario,string vcorreo,int estado,DateTime vfecinicio)
         {
-            cm.Close();
+           
+        }
+
+        public void InsertarNuevoEmpleadoFijo(int vci,int vcodigo,string cargo,int vnumeroCuenta,float vsalario,string vcorreo,int vestado)
+        {
+
         }
     }
 }

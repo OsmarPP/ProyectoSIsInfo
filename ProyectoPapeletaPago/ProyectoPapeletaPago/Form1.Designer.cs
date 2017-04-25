@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxContraseña = new System.Windows.Forms.TextBox();
             this.buttonSesion = new System.Windows.Forms.Button();
             this.buttonOlvideContraseña = new System.Windows.Forms.Button();
             this.buttonRegistrar = new System.Windows.Forms.Button();
@@ -47,13 +47,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIO";
             // 
-            // textBox1
+            // textBoxUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 76);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 32);
-            this.textBox1.TabIndex = 1;
+            this.textBoxUsuario.Location = new System.Drawing.Point(12, 76);
+            this.textBoxUsuario.Multiline = true;
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(266, 32);
+            this.textBoxUsuario.TabIndex = 1;
             // 
             // label2
             // 
@@ -65,13 +65,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "CONTRASEÑA";
             // 
-            // textBox2
+            // textBoxContraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 145);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(266, 32);
-            this.textBox2.TabIndex = 3;
+            this.textBoxContraseña.Location = new System.Drawing.Point(12, 145);
+            this.textBoxContraseña.Multiline = true;
+            this.textBoxContraseña.Name = "textBoxContraseña";
+            this.textBoxContraseña.PasswordChar = '*';
+            this.textBoxContraseña.Size = new System.Drawing.Size(266, 32);
+            this.textBoxContraseña.TabIndex = 3;
             // 
             // buttonSesion
             // 
@@ -111,9 +112,9 @@
             this.Controls.Add(this.buttonRegistrar);
             this.Controls.Add(this.buttonOlvideContraseña);
             this.Controls.Add(this.buttonSesion);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxContraseña);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -125,9 +126,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxContraseña;
         private System.Windows.Forms.Button buttonSesion;
         private System.Windows.Forms.Button buttonOlvideContraseña;
         private System.Windows.Forms.Button buttonRegistrar;
