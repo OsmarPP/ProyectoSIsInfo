@@ -17,6 +17,7 @@ namespace ProyectoPapeletaPago
         SqlDataReader dir;
         SqlDataAdapter da;
         DataTable dt;
+    
 
         public EmpleadoFijoHora()
         {
