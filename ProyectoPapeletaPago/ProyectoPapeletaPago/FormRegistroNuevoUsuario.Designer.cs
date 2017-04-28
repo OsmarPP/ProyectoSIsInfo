@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonRegistrar = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -37,8 +39,6 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,22 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FORMULARIO DE REGISTRO DE USUARIO";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 41);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(228, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "CORREO";
             // 
             // buttonSalir
             // 
@@ -126,22 +142,6 @@
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 2;
             this.label9.Text = "USUARIO";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "INGRES SU CODIGO";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 5;
             // 
             // FormRegistroNuevoUsuario
             // 
