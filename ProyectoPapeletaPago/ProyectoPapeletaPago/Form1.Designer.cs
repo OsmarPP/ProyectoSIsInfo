@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 289);
+            this.ClientSize = new System.Drawing.Size(600, 465);
             this.Controls.Add(this.buttonRegistrar);
             this.Controls.Add(this.buttonOlvideContraseña);
             this.Controls.Add(this.buttonSesion);

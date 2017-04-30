@@ -25,8 +25,10 @@ namespace ProyectoPapeletaPago
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            FormRegistroNuevoUsuario NuevoUsuario = new FormRegistroNuevoUsuario();
-            NuevoUsuario.ShowDialog();
+            //FormRegistroNuevoUsuario NuevoUsuario = new FormRegistroNuevoUsuario();
+            //NuevoUsuario.ShowDialog();
+            FormRegistroNuevoEmpleado register = new FormRegistroNuevoEmpleado();
+            register.ShowDialog();
         }
 
         private void buttonOlvideContraseña_Click(object sender, EventArgs e)
