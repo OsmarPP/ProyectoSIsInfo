@@ -23,24 +23,12 @@ namespace ProyectoPapeletaPago
            // Codigo.ShowDialog();
         }*/
 
-        private void buttonRegistrar_Click(object sender, EventArgs e)
-        {
-            //FormRegistroNuevoUsuario NuevoUsuario = new FormRegistroNuevoUsuario();
-            //NuevoUsuario.ShowDialog();
-            FormRegistroNuevoEmpleado register = new FormRegistroNuevoEmpleado();
-            register.ShowDialog();
-        }
+        
 
-        private void buttonOlvideContraseña_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            FormOlvideContraseña OlvideContraseña = new FormOlvideContraseña();
-            OlvideContraseña.ShowDialog();
-        }
-
-        private void buttonSesion_Click(object sender, EventArgs e)
-        {
-            FormAdministrador Admi = new FormAdministrador();
-            Admi.ShowDialog();
+            FormNuevoEmpleado nuevo = new FormNuevoEmpleado();
+            nuevo.Show();
         }
     }
 }

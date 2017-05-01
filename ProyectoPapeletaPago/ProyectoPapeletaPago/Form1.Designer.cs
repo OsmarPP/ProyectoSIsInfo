@@ -28,110 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxContraseña = new System.Windows.Forms.TextBox();
-            this.buttonSesion = new System.Windows.Forms.Button();
-            this.buttonOlvideContraseña = new System.Windows.Forms.Button();
-            this.buttonRegistrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "USUARIO";
-            // 
-            // textBoxUsuario
-            // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(12, 76);
-            this.textBoxUsuario.Multiline = true;
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(266, 32);
-            this.textBoxUsuario.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "CONTRASEÑA";
-            // 
-            // textBoxContraseña
-            // 
-            this.textBoxContraseña.Location = new System.Drawing.Point(12, 145);
-            this.textBoxContraseña.Multiline = true;
-            this.textBoxContraseña.Name = "textBoxContraseña";
-            this.textBoxContraseña.PasswordChar = '*';
-            this.textBoxContraseña.Size = new System.Drawing.Size(266, 32);
-            this.textBoxContraseña.TabIndex = 3;
-            // 
-            // buttonSesion
-            // 
-            this.buttonSesion.Location = new System.Drawing.Point(12, 196);
-            this.buttonSesion.Name = "buttonSesion";
-            this.buttonSesion.Size = new System.Drawing.Size(266, 57);
-            this.buttonSesion.TabIndex = 4;
-            this.buttonSesion.Text = "INICIAR SESION";
-            this.buttonSesion.UseVisualStyleBackColor = true;
-            this.buttonSesion.Click += new System.EventHandler(this.buttonSesion_Click);
-            // 
-            // buttonOlvideContraseña
-            // 
-            this.buttonOlvideContraseña.Location = new System.Drawing.Point(12, 259);
-            this.buttonOlvideContraseña.Name = "buttonOlvideContraseña";
-            this.buttonOlvideContraseña.Size = new System.Drawing.Size(146, 23);
-            this.buttonOlvideContraseña.TabIndex = 5;
-            this.buttonOlvideContraseña.Text = "OLVIDE MI CONTRASEÑA";
-            this.buttonOlvideContraseña.UseVisualStyleBackColor = true;
-            this.buttonOlvideContraseña.Click += new System.EventHandler(this.buttonOlvideContraseña_Click);
-            // 
-            // buttonRegistrar
-            // 
-            this.buttonRegistrar.Location = new System.Drawing.Point(164, 259);
-            this.buttonRegistrar.Name = "buttonRegistrar";
-            this.buttonRegistrar.Size = new System.Drawing.Size(112, 23);
-            this.buttonRegistrar.TabIndex = 6;
-            this.buttonRegistrar.Text = "REGISTRAR";
-            this.buttonRegistrar.UseVisualStyleBackColor = true;
-            this.buttonRegistrar.Click += new System.EventHandler(this.buttonRegistrar_Click);
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(186, 31);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "REGISTRAR NUEVO EMPLEADO";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 465);
-            this.Controls.Add(this.buttonRegistrar);
-            this.Controls.Add(this.buttonOlvideContraseña);
-            this.Controls.Add(this.buttonSesion);
-            this.Controls.Add(this.textBoxContraseña);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxUsuario);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(306, 303);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxContraseña;
-        private System.Windows.Forms.Button buttonSesion;
-        private System.Windows.Forms.Button buttonOlvideContraseña;
-        private System.Windows.Forms.Button buttonRegistrar;
+        private System.Windows.Forms.Button button1;
     }
 }
 
