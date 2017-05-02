@@ -14,6 +14,7 @@ namespace ProyectoPapeletaPago
     {
         SqlConnection cm;
         SqlCommand cmd;
+        SqlDataReader dir;
 
         public RegistroEmpleado()
         {
@@ -29,9 +30,23 @@ namespace ProyectoPapeletaPago
             }          
         }
 
-        public int YaRegistrod(int id)
+        public int VerificaSiYaEstaRegistrado(int id)
         {
             int cont = 0;
+            try
+            {
+                cmd = new SqlCommand("Select * From Empleado Where ci = "+id+"", cm);
+                dir = cmd.ExecuteReader();
+                while(dir.Read())
+                {
+                    cont++;
+                }
+                dir.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Fallo en la conexion" + ex.ToString());
+            }
             return cont;
         }
 

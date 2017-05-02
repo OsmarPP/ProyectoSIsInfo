@@ -21,29 +21,36 @@ namespace ProyectoPapeletaPago
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int ci = Convert.ToInt32(textBoxCi.Text);
-            int fono = Convert.ToInt32(textBoxTelefono.Text);
-            float moneda = Convert.ToSingle(textBoxSueldo.Text);
-            string rol = comboBoxRol.SelectedItem.ToString();
             if(textBoxCi.Text.Length>0 && textBoxNombre.Text.Length>0 && textBoxAPaterno.Text.Length>0 && textBoxAMaterno.Text.Length>0 && textBoxTelefono.Text.Length>0 && textBoxProfesion.Text.Length>0 && comboBoxRol.Text.Length>0 && textBoxSueldo.Text.Length>0 && textBoxCargo.Text.Length>0 && textBoxCorreo.Text.Length>0)
             {
-                if(registro.InsertarNuevoEmpleado(ci,textBoxNombre.Text,textBoxAPaterno.Text,textBoxAMaterno.Text,fono,textBoxProfesion.Text,rol,moneda,textBoxCargo.Text,textBoxCorreo.Text)==1)
+                if(registro.VerificaSiYaEstaRegistrado(Convert.ToInt32(textBoxCi.Text))==0)
                 {
-                    textBoxCi.Text = "";
-                    textBoxNombre.Text = " ";
-                    textBoxAPaterno.Text = " ";
-                    textBoxAMaterno.Text = " ";
-                    textBoxTelefono.Text = " ";
-                    textBoxProfesion.Text = "";
-                    comboBoxRol.Text = " ";
-                    textBoxSueldo.Text = " ";
-                    textBoxCargo.Text = " ";
-                    textBoxCorreo.Text = " ";
-                    MessageBox.Show("Se registro a un nuevo empleado");
+                    int ci = Convert.ToInt32(textBoxCi.Text);
+                    int fono = Convert.ToInt32(textBoxTelefono.Text);
+                    float moneda = Convert.ToSingle(textBoxSueldo.Text);
+                    string rol = comboBoxRol.SelectedItem.ToString();
+                    if (registro.InsertarNuevoEmpleado(ci, textBoxNombre.Text, textBoxAPaterno.Text, textBoxAMaterno.Text, fono, textBoxProfesion.Text, rol, moneda, textBoxCargo.Text, textBoxCorreo.Text) == 1)
+                    {
+                        textBoxCi.Text = "";
+                        textBoxNombre.Text = " ";
+                        textBoxAPaterno.Text = " ";
+                        textBoxAMaterno.Text = " ";
+                        textBoxTelefono.Text = " ";
+                        textBoxProfesion.Text = "";
+                        comboBoxRol.Text = " ";
+                        textBoxSueldo.Text = " ";
+                        textBoxCargo.Text = " ";
+                        textBoxCorreo.Text = " ";
+                        MessageBox.Show("Se registro a un nuevo empleado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fallo en el registro de nuevo empleado");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Fallo en el registro de nuevo empleado");
+                    MessageBox.Show("Empleado con el carnet    " + textBoxCi.Text + "  ya esta registrado");
                 }
             }
             else
@@ -232,9 +239,9 @@ namespace ProyectoPapeletaPago
         }
 
         //metodo para validar el emal ingresado
-        public  bool ValidacionEmailEmpleado(string email)
+        public static bool ValidacionEmailEmpleado(string email)
         {
-            bool res = true;
+            bool res = false;
             string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             if (Regex.IsMatch(email, expresion))
             {
@@ -261,6 +268,11 @@ namespace ProyectoPapeletaPago
                 textBoxCorreo.SelectAll();
                 textBoxCorreo.Focus();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
