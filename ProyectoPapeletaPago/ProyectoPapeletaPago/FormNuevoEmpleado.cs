@@ -14,6 +14,8 @@ namespace ProyectoPapeletaPago
     public partial class FormNuevoEmpleado : Form
     {
         RegistroEmpleado registro = new RegistroEmpleado();
+        RegistroEmpleadoFijo fijo = new RegistroEmpleadoFijo();
+        RegistroEmpleadoHora hora = new RegistroEmpleadoHora();
         public FormNuevoEmpleado()
         {
             InitializeComponent();
@@ -21,7 +23,8 @@ namespace ProyectoPapeletaPago
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBoxCi.Text.Length>0 && textBoxNombre.Text.Length>0 && textBoxAPaterno.Text.Length>0 && textBoxAMaterno.Text.Length>0 && textBoxTelefono.Text.Length>0 && textBoxProfesion.Text.Length>0 && comboBoxRol.Text.Length>0 && textBoxSueldo.Text.Length>0 && textBoxCargo.Text.Length>0 && textBoxCorreo.Text.Length>0)
+           
+            if(textBoxCi.Text.Length>0 && textBoxNombre.Text.Length>0 && textBoxAPaterno.Text.Length>0 && textBoxAMaterno.Text.Length>0 && textBoxTelefono.Text.Length>0 && textBoxProfesion.Text.Length>0 && comboBoxRol.Text.Length>0 && textBoxSueldo.Text.Length>0 && textBoxCargo.Text.Length>0 && textBoxCorreo.Text.Length>0 && textBoxCuentaBancaria.Text.Length>0)
             {
                 if(registro.VerificaSiYaEstaRegistrado(Convert.ToInt32(textBoxCi.Text))==0)
                 {
@@ -29,18 +32,50 @@ namespace ProyectoPapeletaPago
                     int fono = Convert.ToInt32(textBoxTelefono.Text);
                     float moneda = Convert.ToSingle(textBoxSueldo.Text);
                     string rol = comboBoxRol.SelectedItem.ToString();
+                    int cuenta = Convert.ToInt32(textBoxCuentaBancaria.Text);
                     if (registro.InsertarNuevoEmpleado(ci, textBoxNombre.Text, textBoxAPaterno.Text, textBoxAMaterno.Text, fono, textBoxProfesion.Text, rol, moneda, textBoxCargo.Text, textBoxCorreo.Text) == 1)
                     {
-                        textBoxCi.Text = "";
-                        textBoxNombre.Text = " ";
-                        textBoxAPaterno.Text = " ";
-                        textBoxAMaterno.Text = " ";
-                        textBoxTelefono.Text = " ";
-                        textBoxProfesion.Text = "";
-                        comboBoxRol.Text = " ";
-                        textBoxSueldo.Text = " ";
-                        textBoxCargo.Text = " ";
-                        textBoxCorreo.Text = " ";
+                       
+                        if(rol.Equals("fijo") || rol.Equals("administrador"))
+                        {
+                            if(fijo.InsertarNuevoEmpleadoFijo(ci, rol, moneda, textBoxCargo.Text, textBoxCargo.Text, cuenta)==1)
+                            {
+                                textBoxCi.Text = "";
+                                textBoxNombre.Text = " ";
+                                textBoxAPaterno.Text = " ";
+                                textBoxAMaterno.Text = " ";
+                                textBoxTelefono.Text = " ";
+                                textBoxProfesion.Text = "";
+                                comboBoxRol.Text = " ";
+                                textBoxSueldo.Text = " ";
+                                textBoxCargo.Text = " ";
+                                textBoxCorreo.Text = " ";
+                                textBoxCuentaBancaria.Text = " ";
+                                
+                        
+                            }
+                        }
+                        else
+                        {
+                            if(rol.Equals("hora"))
+                            {
+                                if(hora.InsertarNuevoEmpleadoHora(ci, rol, moneda, textBoxCargo.Text, textBoxCargo.Text, cuenta)==1)
+                                {
+                                    textBoxCi.Text = "";
+                                    textBoxNombre.Text = " ";
+                                    textBoxAPaterno.Text = " ";
+                                    textBoxAMaterno.Text = " ";
+                                    textBoxTelefono.Text = " ";
+                                    textBoxProfesion.Text = "";
+                                    comboBoxRol.Text = " ";
+                                    textBoxSueldo.Text = " ";
+                                    textBoxCargo.Text = " ";
+                                    textBoxCorreo.Text = " ";
+                                    textBoxCuentaBancaria.Text = " ";
+                                }
+                            }
+                        }
+                       
                         MessageBox.Show("Se registro a un nuevo empleado");
                     }
                     else
@@ -57,6 +92,8 @@ namespace ProyectoPapeletaPago
             {
                 MessageBox.Show("Tiene que llenar el formulario");
             }
+
+            
         }
 
         private void textBoxCi_KeyPress(object sender, KeyPressEventArgs e)
@@ -272,7 +309,53 @@ namespace ProyectoPapeletaPago
 
         private void button3_Click(object sender, EventArgs e)
         {
+            registro.CerreConexion();
+            fijo.CerraConexion();
+            hora.CerrarConexion();
             this.Close();
+        }
+
+        private void buttonVistaPrevia_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("CI : " + textBoxCi.Text +"\n"+ " NOMBRE :  \n" + textBoxNombre.Text);
+        }
+
+        private void textBoxNumeroCuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condicion que solo nos permite ingresar datos numericos
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            //condicion que nos permite utlizar el backspace
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se admite numeros", "Validacion del Numero de cuenta del empleado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void textBoxCuentaBancaria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //condicion que solo nos permite ingresar datos numericos
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            //condicion que nos permite utlizar el backspace
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se admite numeros", "Validacion del Numero de cuenta del empleado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

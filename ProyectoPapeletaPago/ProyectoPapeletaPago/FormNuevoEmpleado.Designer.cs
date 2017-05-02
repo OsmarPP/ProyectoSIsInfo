@@ -51,8 +51,10 @@
             this.textBoxAPaterno = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonVistaPrevia = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxCuentaBancaria = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +68,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxCuentaBancaria);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.comboBoxRol);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label8);
@@ -88,7 +92,7 @@
             this.groupBox1.Controls.Add(this.textBoxCi);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(228, 542);
+            this.groupBox1.Size = new System.Drawing.Size(228, 609);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FORMULARIO DE REGISTRO DE EMPLEADO";
@@ -263,14 +267,14 @@
             // 
             this.groupBox2.Location = new System.Drawing.Point(248, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(456, 542);
+            this.groupBox2.Size = new System.Drawing.Size(461, 666);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "EMPLEADOS REGISTRADOS";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 561);
+            this.button1.Location = new System.Drawing.Point(13, 628);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
             this.button1.TabIndex = 11;
@@ -278,18 +282,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonVistaPrevia
             // 
-            this.button2.Location = new System.Drawing.Point(13, 590);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "VISTA PREVIA DE REGISTRO";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonVistaPrevia.Location = new System.Drawing.Point(13, 657);
+            this.buttonVistaPrevia.Name = "buttonVistaPrevia";
+            this.buttonVistaPrevia.Size = new System.Drawing.Size(228, 23);
+            this.buttonVistaPrevia.TabIndex = 10;
+            this.buttonVistaPrevia.Text = "VISTA PREVIA DE REGISTRO";
+            this.buttonVistaPrevia.UseVisualStyleBackColor = true;
+            this.buttonVistaPrevia.Click += new System.EventHandler(this.buttonVistaPrevia_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(158, 561);
+            this.button3.Location = new System.Drawing.Point(158, 628);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(83, 23);
             this.button3.TabIndex = 12;
@@ -297,13 +302,30 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 546);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(170, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "NUMERO DE CUENT BANCARIA";
+            // 
+            // textBoxCuentaBancaria
+            // 
+            this.textBoxCuentaBancaria.Location = new System.Drawing.Point(9, 563);
+            this.textBoxCuentaBancaria.Name = "textBoxCuentaBancaria";
+            this.textBoxCuentaBancaria.Size = new System.Drawing.Size(205, 20);
+            this.textBoxCuentaBancaria.TabIndex = 24;
+            this.textBoxCuentaBancaria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCuentaBancaria_KeyPress);
+            // 
             // FormNuevoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 622);
+            this.ClientSize = new System.Drawing.Size(721, 691);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonVistaPrevia);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -340,7 +362,9 @@
         private System.Windows.Forms.TextBox textBoxCargo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonVistaPrevia;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxCuentaBancaria;
     }
 }

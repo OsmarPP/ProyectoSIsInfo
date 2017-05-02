@@ -15,14 +15,14 @@ namespace ProyectoPapeletaPago
         SqlConnection cm;
         SqlCommand cmd;
         SqlDataReader dir;
-
+        
         public RegistroEmpleado()
         {
             try
             {
                 cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MatiasPF\Source\Repos\ProyectoSIsInfo\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
                 cm.Open();
-                MessageBox.Show("Conectado");
+                //MessageBox.Show(fecactual.ToString());
             }
             catch(Exception ex)
             {
@@ -56,9 +56,10 @@ namespace ProyectoPapeletaPago
             int salida;
             try
             {
-                cmd = new SqlCommand("Insert into Empleado(ci,nombre,apellidopaterno,apellidomaterno,telefono,profesion,estado) values("+vci+",'"+nom+"','"+paterno+"','"+materno+"',"+vfono+",'"+vprofesion+"',"+vestado+")", cm);
+                cmd = new SqlCommand("Insert into Empleado(ci,nombre,apellidopaterno,apellidomaterno,telefono,profesion,estado) values(" + vci + ",'" + nom + "','" + paterno + "','" + materno + "'," + vfono + ",'" + vprofesion + "'," + vestado + ")", cm);
                 cmd.ExecuteNonQuery();
                 salida = 1;
+               
             }
             catch(Exception ex)
             {
