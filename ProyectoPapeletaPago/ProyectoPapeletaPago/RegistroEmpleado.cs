@@ -15,12 +15,15 @@ namespace ProyectoPapeletaPago
         SqlConnection cm;
         SqlCommand cmd;
         SqlDataReader dir;
+
+        SqlDataAdapter da;
+        DataTable dt;
         
         public RegistroEmpleado()
         {
             try
             {
-                cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\Users\Robert\Source\Repos\ProyectoSIsInfo2\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
+                cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MatiasPF\Source\Repos\ProyectoSIsInfo\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
                 cm.Open();
                 //MessageBox.Show(fecactual.ToString());
             }
@@ -56,7 +59,7 @@ namespace ProyectoPapeletaPago
             int salida;
             try
             {
-                cmd = new SqlCommand("Insert into Empleado(ci,nombre,apellidopaterno,apellidomaterno,telefono,profesion,estado) values(" + vci + ",'" + nom + "','" + paterno + "','" + materno + "'," + vfono + ",'" + vprofesion + "'," + vestado + ")", cm);
+                cmd = new SqlCommand("Insert into Empleado(ci,nombre,apellidopaterno,apellidomaterno,telefono,profesion,estado,rol) values(" + vci + ",'" + nom + "','" + paterno + "','" + materno + "'," + vfono + ",'" + vprofesion + "'," + vestado + ",'"+vrol+"')", cm);
                 cmd.ExecuteNonQuery();
                 salida = 1;
                
@@ -67,6 +70,21 @@ namespace ProyectoPapeletaPago
                 salida = 0;
             }
             return salida;
+        }
+
+        public void MostraEmpleadoRegistrado(DataGridView dgv)
+        {
+            try
+            {
+                da = new SqlDataAdapter("Select ci,nombre,apellidopaterno,apellidomaterno,telefono,profesion,rol From Empleado Where estado=" + 1+"", cm);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se puede mostra a los empleados" + ex.ToString());
+            }
         }
 
         public void CerreConexion()

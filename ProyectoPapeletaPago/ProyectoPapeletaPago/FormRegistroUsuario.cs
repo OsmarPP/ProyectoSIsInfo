@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoPapeletaPago
 {
-    public partial class FormMostrarBoleta : Form
+    public partial class FormRegistroUsuario : Form
     {
-        public FormMostrarBoleta()
+        public FormRegistroUsuario()
         {
             InitializeComponent();
         }

@@ -40,6 +40,7 @@ namespace ProyectoPapeletaPago
                         {
                             if(fijo.InsertarNuevoEmpleadoFijo(ci, rol, moneda, textBoxCargo.Text, textBoxCargo.Text, cuenta)==1)
                             {
+                                registro.MostraEmpleadoRegistrado(dataGridViewEmpleadosFijHora);
                                 textBoxCi.Text = "";
                                 textBoxNombre.Text = " ";
                                 textBoxAPaterno.Text = " ";
@@ -356,6 +357,11 @@ namespace ProyectoPapeletaPago
                 e.Handled = true;
                 MessageBox.Show("Solo se admite numeros", "Validacion del Numero de cuenta del empleado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void FormNuevoEmpleado_Load(object sender, EventArgs e)
+        {
+            registro.MostraEmpleadoRegistrado(dataGridViewEmpleadosFijHora);
         }
     }
 }

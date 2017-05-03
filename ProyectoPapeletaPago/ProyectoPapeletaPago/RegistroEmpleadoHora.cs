@@ -14,12 +14,13 @@ namespace ProyectoPapeletaPago
     {
         SqlConnection cm;
         SqlCommand cmd;
+        DateTime fecactual = DateTime.Now;
 
         public RegistroEmpleadoHora()
         {
             try
             {
-                cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\Users\Robert\Source\Repos\ProyectoSIsInfo2\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
+                cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MatiasPF\Source\Repos\ProyectoSIsInfo\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
                 cm.Open();
             }
             catch(Exception ex)
@@ -34,7 +35,19 @@ namespace ProyectoPapeletaPago
             int salida;
             try
             {
-                cmd = new SqlCommand("Insert into EmpHora(codigo,rol,sueldo,cargo,correo,estado,numerobancario) values(" + vcodigo + ",'" + vrol + "'," + vsueldo + ",'" + vcargo + "','" + vcorreo + "'," + est + "," + cuenta + ")", cm);
+                /*cmd = new SqlCommand("Insert into EmpHora(codigo,rol,sueldo,cargo,correo,estado,numerobancario) values(" + vcodigo + ",'" + vrol + "'," + vsueldo + ",'" + vcargo + "','" + vcorreo + "'," + est + "," + cuenta + ")", cm);
+                cmd.ExecuteNonQuery();*/
+                string query = "INSERT INTO EmpHora (codigo,rol,sueldo,cargo,correo,estado,fecha,numerobancario) VALUES (@codigo,@rol,@sueldo,@cargo,@correo,@estado,@fecha,@numerobancario)";
+                SqlCommand cmd = new SqlCommand(query, cm);
+
+                cmd.Parameters.AddWithValue("@codigo", vcodigo);
+                cmd.Parameters.AddWithValue("@rol", vrol);
+                cmd.Parameters.AddWithValue("@sueldo", vsueldo);
+                cmd.Parameters.AddWithValue("@cargo", vcargo);
+                cmd.Parameters.AddWithValue("@correo", vcorreo);
+                cmd.Parameters.AddWithValue("@estado", est);
+                cmd.Parameters.AddWithValue("@fecha", fecactual);
+                cmd.Parameters.AddWithValue("@numerobancario", cuenta);
                 cmd.ExecuteNonQuery();
                 salida = 1;
             }

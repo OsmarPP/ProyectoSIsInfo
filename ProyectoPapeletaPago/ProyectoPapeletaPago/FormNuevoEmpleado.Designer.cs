@@ -30,6 +30,8 @@
         {
             this.textBoxCi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxCuentaBancaria = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.comboBoxRol = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,17 +52,19 @@
             this.textBoxCargo = new System.Windows.Forms.TextBox();
             this.textBoxAPaterno = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewEmpleadosFijHora = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonVistaPrevia = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxCuentaBancaria = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadosFijHora)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxCi
             // 
             this.textBoxCi.Location = new System.Drawing.Point(9, 57);
+            this.textBoxCi.MaxLength = 250;
             this.textBoxCi.Name = "textBoxCi";
             this.textBoxCi.Size = new System.Drawing.Size(205, 20);
             this.textBoxCi.TabIndex = 0;
@@ -96,6 +100,24 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FORMULARIO DE REGISTRO DE EMPLEADO";
+            // 
+            // textBoxCuentaBancaria
+            // 
+            this.textBoxCuentaBancaria.Location = new System.Drawing.Point(9, 563);
+            this.textBoxCuentaBancaria.MaxLength = 250;
+            this.textBoxCuentaBancaria.Name = "textBoxCuentaBancaria";
+            this.textBoxCuentaBancaria.Size = new System.Drawing.Size(205, 20);
+            this.textBoxCuentaBancaria.TabIndex = 24;
+            this.textBoxCuentaBancaria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCuentaBancaria_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 546);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(170, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "NUMERO DE CUENT BANCARIA";
             // 
             // comboBoxRol
             // 
@@ -139,6 +161,7 @@
             // textBoxProfesion
             // 
             this.textBoxProfesion.Location = new System.Drawing.Point(9, 311);
+            this.textBoxProfesion.MaxLength = 250;
             this.textBoxProfesion.Name = "textBoxProfesion";
             this.textBoxProfesion.Size = new System.Drawing.Size(205, 20);
             this.textBoxProfesion.TabIndex = 5;
@@ -174,6 +197,7 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Location = new System.Drawing.Point(9, 261);
+            this.textBoxTelefono.MaxLength = 250;
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(205, 20);
             this.textBoxTelefono.TabIndex = 4;
@@ -182,6 +206,7 @@
             // textBoxCorreo
             // 
             this.textBoxCorreo.Location = new System.Drawing.Point(9, 509);
+            this.textBoxCorreo.MaxLength = 250;
             this.textBoxCorreo.Name = "textBoxCorreo";
             this.textBoxCorreo.Size = new System.Drawing.Size(205, 20);
             this.textBoxCorreo.TabIndex = 9;
@@ -190,6 +215,7 @@
             // textBoxAMaterno
             // 
             this.textBoxAMaterno.Location = new System.Drawing.Point(9, 208);
+            this.textBoxAMaterno.MaxLength = 250;
             this.textBoxAMaterno.Name = "textBoxAMaterno";
             this.textBoxAMaterno.Size = new System.Drawing.Size(205, 20);
             this.textBoxAMaterno.TabIndex = 3;
@@ -198,6 +224,7 @@
             // textBoxSueldo
             // 
             this.textBoxSueldo.Location = new System.Drawing.Point(9, 408);
+            this.textBoxSueldo.MaxLength = 250;
             this.textBoxSueldo.Name = "textBoxSueldo";
             this.textBoxSueldo.Size = new System.Drawing.Size(205, 20);
             this.textBoxSueldo.TabIndex = 7;
@@ -206,6 +233,7 @@
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(9, 107);
+            this.textBoxNombre.MaxLength = 250;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(205, 20);
             this.textBoxNombre.TabIndex = 1;
@@ -234,9 +262,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 342);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 13);
+            this.label12.Size = new System.Drawing.Size(130, 13);
             this.label12.TabIndex = 11;
-            this.label12.Text = "ROL";
+            this.label12.Text = "ROL ELIJA UNA OPCION";
             // 
             // label1
             // 
@@ -250,6 +278,7 @@
             // textBoxCargo
             // 
             this.textBoxCargo.Location = new System.Drawing.Point(9, 459);
+            this.textBoxCargo.MaxLength = 250;
             this.textBoxCargo.Name = "textBoxCargo";
             this.textBoxCargo.Size = new System.Drawing.Size(205, 20);
             this.textBoxCargo.TabIndex = 8;
@@ -258,6 +287,7 @@
             // textBoxAPaterno
             // 
             this.textBoxAPaterno.Location = new System.Drawing.Point(9, 158);
+            this.textBoxAPaterno.MaxLength = 250;
             this.textBoxAPaterno.Name = "textBoxAPaterno";
             this.textBoxAPaterno.Size = new System.Drawing.Size(205, 20);
             this.textBoxAPaterno.TabIndex = 2;
@@ -265,12 +295,23 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dataGridViewEmpleadosFijHora);
             this.groupBox2.Location = new System.Drawing.Point(248, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(461, 666);
+            this.groupBox2.Size = new System.Drawing.Size(1075, 666);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "EMPLEADOS REGISTRADOS";
+            // 
+            // dataGridViewEmpleadosFijHora
+            // 
+            this.dataGridViewEmpleadosFijHora.AllowUserToAddRows = false;
+            this.dataGridViewEmpleadosFijHora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmpleadosFijHora.Location = new System.Drawing.Point(7, 20);
+            this.dataGridViewEmpleadosFijHora.Name = "dataGridViewEmpleadosFijHora";
+            this.dataGridViewEmpleadosFijHora.RowHeadersVisible = false;
+            this.dataGridViewEmpleadosFijHora.Size = new System.Drawing.Size(1068, 640);
+            this.dataGridViewEmpleadosFijHora.TabIndex = 0;
             // 
             // button1
             // 
@@ -302,28 +343,11 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 546);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 13);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "NUMERO DE CUENT BANCARIA";
-            // 
-            // textBoxCuentaBancaria
-            // 
-            this.textBoxCuentaBancaria.Location = new System.Drawing.Point(9, 563);
-            this.textBoxCuentaBancaria.Name = "textBoxCuentaBancaria";
-            this.textBoxCuentaBancaria.Size = new System.Drawing.Size(205, 20);
-            this.textBoxCuentaBancaria.TabIndex = 24;
-            this.textBoxCuentaBancaria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCuentaBancaria_KeyPress);
-            // 
             // FormNuevoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 691);
+            this.ClientSize = new System.Drawing.Size(1335, 691);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonVistaPrevia);
             this.Controls.Add(this.button1);
@@ -331,8 +355,11 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormNuevoEmpleado";
             this.Text = "FormNuevoEmpleado";
+            this.Load += new System.EventHandler(this.FormNuevoEmpleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadosFijHora)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,5 +393,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxCuentaBancaria;
+        private System.Windows.Forms.DataGridView dataGridViewEmpleadosFijHora;
     }
 }

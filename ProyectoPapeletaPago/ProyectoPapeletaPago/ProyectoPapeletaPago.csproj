@@ -12,7 +12,6 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,16 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoletasDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BoletasDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="ConectarFecha.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionarPago.Designer.cs">
+      <DependentUpon>FormGestionarPago.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMostrarBoleta.cs">
       <SubType>Form</SubType>
@@ -84,20 +86,29 @@
     <Compile Include="FormNuevoEmpleado.Designer.cs">
       <DependentUpon>FormNuevoEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormVistaBoleta.cs">
+    <Compile Include="FormRegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVistaBoleta.Designer.cs">
-      <DependentUpon>FormVistaBoleta.cs</DependentUpon>
+    <Compile Include="FormRegistroUsuario.Designer.cs">
+      <DependentUpon>FormRegistroUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="MostrarBoleta.cs" />
+    <Compile Include="FormVistaAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVistaAdministrador.Designer.cs">
+      <DependentUpon>FormVistaAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroEmpleado.cs" />
     <Compile Include="RegistroEmpleadoFijo.cs" />
     <Compile Include="RegistroEmpleadoHora.cs" />
+    <Compile Include="RegistroUsuario.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionarPago.resx">
+      <DependentUpon>FormGestionarPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMostrarBoleta.resx">
       <DependentUpon>FormMostrarBoleta.cs</DependentUpon>
@@ -105,8 +116,11 @@
     <EmbeddedResource Include="FormNuevoEmpleado.resx">
       <DependentUpon>FormNuevoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVistaBoleta.resx">
-      <DependentUpon>FormVistaBoleta.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistroUsuario.resx">
+      <DependentUpon>FormRegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVistaAdministrador.resx">
+      <DependentUpon>FormVistaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,17 +131,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="BoletasDataSet.xsc">
-      <DependentUpon>BoletasDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BoletasDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BoletasDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BoletasDataSet.xss">
-      <DependentUpon>BoletasDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,24 +152,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BDPago.mdf</DependentUpon>
     </Content>
-    <Content Include="Boletas.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Boletas_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Boletas.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
       <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>

@@ -10,24 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoPapeletaPago
 {
-    public partial class FormVistaBoleta : Form
+    public partial class FormGestionarPago : Form
     {
-
-        int ci;
-        string mes;
-        int anio;
-
-        public FormVistaBoleta()
+        public FormGestionarPago()
         {
             InitializeComponent();
-            
         }
-
-        private void FormVistaBoleta_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }

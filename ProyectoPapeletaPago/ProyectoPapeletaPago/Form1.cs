@@ -12,6 +12,8 @@ namespace ProyectoPapeletaPago
 {
     public partial class Form1 : Form
     {
+        DateTime fec = DateTime.Now;
+        ConectarFecha ft = new ConectarFecha();
         public Form1()
         {
             InitializeComponent();
@@ -29,12 +31,19 @@ namespace ProyectoPapeletaPago
         {
             FormNuevoEmpleado nuevo = new FormNuevoEmpleado();
             nuevo.Show();
+            //ft.InsertarFecha(fec);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormMostrarBoleta mostrar = new FormMostrarBoleta();
-            mostrar.Show();
+            FormVistaAdministrador admi = new FormVistaAdministrador();
+            admi.ShowDialog();
+        }
+
+        private void buttonSesion_Click(object sender, EventArgs e)
+        {
+            FormVistaAdministrador admi = new FormVistaAdministrador();
+            admi.ShowDialog();
         }
     }
 }
