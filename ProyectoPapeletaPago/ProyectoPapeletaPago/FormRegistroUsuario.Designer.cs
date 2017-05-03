@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.textBoxCorreo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxContraseña = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxConfContraseña = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxContraseña = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxCorreo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
+            this.buttonRegistrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,28 +67,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FORMULARIO DE REGISTRO DE USUARIO";
             // 
-            // textBoxUsuario
+            // textBoxConfContraseña
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(9, 65);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(264, 20);
-            this.textBoxUsuario.TabIndex = 1;
+            this.textBoxConfContraseña.Location = new System.Drawing.Point(9, 269);
+            this.textBoxConfContraseña.Name = "textBoxConfContraseña";
+            this.textBoxConfContraseña.PasswordChar = '*';
+            this.textBoxConfContraseña.Size = new System.Drawing.Size(264, 20);
+            this.textBoxConfContraseña.TabIndex = 7;
             // 
-            // textBoxCorreo
+            // label6
             // 
-            this.textBoxCorreo.Location = new System.Drawing.Point(9, 133);
-            this.textBoxCorreo.Name = "textBoxCorreo";
-            this.textBoxCorreo.Size = new System.Drawing.Size(264, 20);
-            this.textBoxCorreo.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "CORREO ELECTRONICO";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "CONFIRMAR CONTRASEÑA";
             // 
             // textBoxContraseña
             // 
@@ -107,38 +101,45 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "CONTRASEÑA";
             // 
-            // textBoxConfContraseña
+            // textBoxCorreo
             // 
-            this.textBoxConfContraseña.Location = new System.Drawing.Point(9, 269);
-            this.textBoxConfContraseña.Name = "textBoxConfContraseña";
-            this.textBoxConfContraseña.PasswordChar = '*';
-            this.textBoxConfContraseña.Size = new System.Drawing.Size(264, 20);
-            this.textBoxConfContraseña.TabIndex = 7;
+            this.textBoxCorreo.Location = new System.Drawing.Point(9, 133);
+            this.textBoxCorreo.Name = "textBoxCorreo";
+            this.textBoxCorreo.Size = new System.Drawing.Size(264, 20);
+            this.textBoxCorreo.TabIndex = 3;
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "CONFIRMAR CONTRASEÑA";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "CORREO ELECTRONICO";
             // 
-            // button1
+            // textBoxUsuario
             // 
-            this.button1.Location = new System.Drawing.Point(13, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "REGISTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBoxUsuario.Location = new System.Drawing.Point(9, 65);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(264, 20);
+            this.textBoxUsuario.TabIndex = 1;
+            // 
+            // buttonRegistrar
+            // 
+            this.buttonRegistrar.Location = new System.Drawing.Point(13, 348);
+            this.buttonRegistrar.Name = "buttonRegistrar";
+            this.buttonRegistrar.Size = new System.Drawing.Size(108, 23);
+            this.buttonRegistrar.TabIndex = 2;
+            this.buttonRegistrar.Text = "REGISTRAR";
+            this.buttonRegistrar.UseVisualStyleBackColor = true;
+            this.buttonRegistrar.Click += new System.EventHandler(this.buttonRegistrar_Click);
             // 
             // FormRegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 385);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRegistrar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormRegistroUsuario";
             this.Text = "FormRegistroUsuario";
@@ -159,6 +160,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxContraseña;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRegistrar;
     }
 }

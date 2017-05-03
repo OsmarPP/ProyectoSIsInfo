@@ -45,5 +45,17 @@ namespace ProyectoPapeletaPago
             FormVistaAdministrador admi = new FormVistaAdministrador();
             admi.ShowDialog();
         }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            /*RegistroUsuario user = new RegistroUsuario();
+            user.InsertarNuevoUsuario("osmar", "hola", "osmar_1070@hotmail.com");*/
+        }
+
+        private void buttonNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            FormRegistroUsuario user = new FormRegistroUsuario();
+            user.ShowDialog();
+        }
     }
 }

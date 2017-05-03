@@ -88,6 +88,7 @@
             this.buttonNuevoUsuario.TabIndex = 5;
             this.buttonNuevoUsuario.Text = "REGISTRAR NUEVO USUARIO";
             this.buttonNuevoUsuario.UseVisualStyleBackColor = true;
+            this.buttonNuevoUsuario.Click += new System.EventHandler(this.buttonNuevoUsuario_Click);
             // 
             // buttonSalir
             // 
@@ -97,6 +98,7 @@
             this.buttonSalir.TabIndex = 6;
             this.buttonSalir.Text = "SALIR";
             this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // Form1
             // 
