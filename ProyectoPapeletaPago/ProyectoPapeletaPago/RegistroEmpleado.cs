@@ -20,7 +20,7 @@ namespace ProyectoPapeletaPago
         {
             try
             {
-                cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MatiasPF\Source\Repos\ProyectoSIsInfo\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
+                cm = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\Users\Robert\Source\Repos\ProyectoSIsInfo2\ProyectoPapeletaPago\ProyectoPapeletaPago\BDPago.mdf;Integrated Security=True");
                 cm.Open();
                 //MessageBox.Show(fecactual.ToString());
             }

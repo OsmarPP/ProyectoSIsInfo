@@ -30,5 +30,11 @@ namespace ProyectoPapeletaPago
             FormNuevoEmpleado nuevo = new FormNuevoEmpleado();
             nuevo.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormMostrarBoleta mostrar = new FormMostrarBoleta();
+            mostrar.Show();
+        }
     }
 }
