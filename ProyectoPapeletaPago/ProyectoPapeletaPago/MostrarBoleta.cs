@@ -28,6 +28,7 @@ namespace ProyectoPapeletaPago
             {
                 MessageBox.Show("Fallo con la conexion de la base de datos" + ex.ToString());
 
+
             }
         }
 
